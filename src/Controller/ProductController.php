@@ -11,11 +11,10 @@ class ProductController extends AbstractController
     /**
      * @Route("/product", name="product")
      */
-    public function index(): Response
+    public function product(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/ProductController.php',
+        return $this->render('product.html.twig', [
+            'controller_name' => 'ProductController',
         ]);
     }
 }
