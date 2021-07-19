@@ -6,5 +6,26 @@
 </head>
 <body>
     {% include 'header.html.twig' %}
+
+    <h1>{{ category.title }}</h1>
+    <p> {{ category.description }}</p>
+
+    {%for product in products %}
+        {% if product.category == category.id %}
+
+            <p>{{ product.brand }}</p>
+            <p>{{ product.designation }}</p>
+            <img src="{{ product.image }}" alt="'Photo du produit '.{{ product.designation }}">
+
+            <p>{{ product.price }}</p>
+            <p>{{ product.stock }}</p>
+
+            //Lien vers la page détail du produit
+            <a href="{{ path("product_detail", {"product_id": product_id}) }}"> En savoir plus </a>
+            //Lien vers le panier
+            <a href="{{ path("accueil")}}"> Ajouter au panier </a>
+
+        {% endif %}
+    {% endfor %}
 </body>
 </html>
