@@ -1,3 +1,5 @@
+{% extends "base.html.twig" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,7 @@
 </head>
 <body>
     {% include 'header.html.twig' %}
-
+    {% block body %}
     <h1>{{ category.title }} </h1>
     <p> {{ category.description }}</p>
 
@@ -23,5 +25,6 @@
             <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
 
     {% endfor %}
+    {% endblock %}
 </body>
 </html>
