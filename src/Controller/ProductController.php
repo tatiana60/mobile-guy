@@ -24,10 +24,4 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function list(): Response
-    {
-        $product = $this->productRepository->findBy([], ['designation'=> 'ASC']);
-
-    }
-
 }
