@@ -1,13 +1,7 @@
 {% extends "base.html.twig" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ category.title }}</title>
-</head>
-<body>
-    {% include 'header.html.twig' %}
+{% block title %}{{ category.title }}{% endblock %}
+
     {% block body %}
     <h1>{{ category.title }} </h1>
     <p> {{ category.description }}</p>
@@ -26,5 +20,3 @@
 
     {% endfor %}
     {% endblock %}
-</body>
-</html>
