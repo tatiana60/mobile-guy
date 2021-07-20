@@ -14,14 +14,20 @@ class ProductController extends AbstractController
      */
     private $productRepository;
 
-    /**
-     * @Route("/product", name="product")
-     */
-    public function product(): Response
+    public function __construct(ProductRepository $repository)
     {
-        return $this->render('product.html.twig', [
-            'controller_name' => 'ProductController',
-        ]);
+        $this->productRepository=$repository;
     }
 
+    /**
+     * @Route("/product-{id}", name="product")
+     * @param $id
+     */
+    public function product(int $id): Response
+    {
+        $product=$this->productRepository->find($id);
+        return $this->render('product.html.twig', [
+            'product' => $product,
+        ]);
+    }
 }
