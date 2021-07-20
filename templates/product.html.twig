@@ -4,18 +4,33 @@
 
     {% block body %}
 
+        <h1>{{ product.brand }}</h1>
+        <h2>{{ product.designation }} - {{ product.specification }}</h2>
 
-    <h1>{{ product.brand }}</h1>
-    <h2>{{ product.designation }} - {{ product.specification }}</h2>
+        <p>{{ product.description }}</p>
 
-    <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        <p>{{ product.stock }}</p>
 
-    <p>{{ product.price }}</p>
-    <p>{{ product.stock }}</p>
+        <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
 
-    <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
+        <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
 
-    <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
+        <p>{{ product.content }}</p>
 
-    <p>{{ product.content }}</p>
+        {# Affichage des produits suggérés, i prend la valeur du produit de cross_Selling (tableau) #}
+        {{ cross_Selling|length }}
+        {% for i in cross_Selling %}
+            <p>{{ i.brand }}</p>
+            <p>{{ i.designation }}</p>
+            <img src="/images/{{ i.image }}" alt="Photo du produit .{{ i.designation }}">
+
+            <p>{{ i.price }}</p>
+            <p>{{ i.stock }}</p>
+
+            <a href="{{ path("product", {'id':i.id}) }}"> En savoir plus </a>
+            <a href="{{ path('add_panier', {'id':i.id }) }}"> Ajouter au panier </a>
+        {% endfor %}
+
+
 {% endblock %}
