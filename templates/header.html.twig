@@ -1,7 +1,7 @@
 <header>
         <nav id="navbar" class="navbar">
             <ul class="menu">
-                <img src="/images/01-logo/color.png" id="logo-header" class="logo-header">
+                <a href="{{ path ('accueil') }}"><img src="/images/01-logo/color.png" id="logo-header" class="logo-header"></a>
                 <li><a href="{{ path ('accueil') }}">Accueil</a></li>
                 <li><a href="{{ path ('category', {'id':1}) }}">Smartphones</a></li>
                 <li><a href="{{ path ('category', {'id':2}) }}">Accessoires</a></li>
