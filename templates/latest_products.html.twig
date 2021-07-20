@@ -1,0 +1,14 @@
+{# Bloc permettant d'afficher les 4 derniers produits de la base de données (test)#}
+{% block body %}
+    {% for i in cross_Selling %}
+        <p>{{ i.brand }}</p>
+        <p>{{ i.designation }}</p>
+        <img src="/images/{{ i.image }}" alt="Photo du produit .{{ i.designation }}">
+
+        <p>{{ i.price }}</p>
+        <p>{{ i.stock }}</p>
+
+        <a href="{{ path("product", {'id':i.id}) }}"> En savoir plus </a>
+        <a href="{{ path('add_panier', {'id':i.id }) }}"> Ajouter au panier </a>
+    {% endfor %}
+{% endblock %}
