@@ -7,7 +7,7 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             <link rel="stylesheet" href="/css/styles.css">
-
+            <link rel="stylesheet" href="/css/category.css">
         {% endblock %}
 
         {% block javascripts %}
@@ -16,7 +16,12 @@
     </head>
     <body>
         {% include "header.html.twig" %}
-        {% block body %}{% endblock %}
+        
+      {% block body %}
+        {% include "category.html.twig" %}
+        {% endblock %}
+        
         {% include "footer.html.twig" %}
+
     </body>
 </html>
