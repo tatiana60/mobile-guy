@@ -30,7 +30,7 @@ class CategoryController extends AbstractController
 
         return $this->render('category.html.twig', [
             'category' => $category,
-            'products'=> $productRepository->findAll(),
+            'products'=> $productRepository->findBy(['category'=>$category]),
         ]);
     }
 }
