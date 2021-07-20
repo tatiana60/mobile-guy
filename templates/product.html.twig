@@ -1,7 +1,24 @@
-{% extends "base.html.twig" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.designation }}</title>
+</head>
+<body>
+    {% include 'header.html.twig' %}
 
-{% block title %}Produit{% endblock %}
+    <h1>{{ product.brand }}</h1>
+    <h2>{{ product.designation }} - {{ product.specification }}</h2>
 
-{% block body %}
+    <p>{{ product.description }}</p>
 
-{% endblock %}
+    <p>{{ product.price }}</p>
+    <p>{{ product.stock }}</p>
+
+    <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
+
+    <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
+
+    <p>{{ product.content }}</p>
+</body>
+</html>
