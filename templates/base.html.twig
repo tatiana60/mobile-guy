@@ -16,9 +16,12 @@
     </head>
     <body>
         {% include "header.html.twig" %}
-        {% block body %}
+        
+      {% block body %}
         {% include "category.html.twig" %}
         {% endblock %}
-        {# {% include "footer.html.twig" %} #}
+        
+        {% include "footer.html.twig" %}
+
     </body>
 </html>
