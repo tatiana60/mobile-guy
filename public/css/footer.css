@@ -1,0 +1,28 @@
+/* STYLES FOOTER */
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+footer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-width: min-content;
+}
+.font-footer{
+    background-color: #C36033;
+    opacity: 70%;
+}
+/*h3 {
+    font-family: 'Secular One';
+    font-size: 18px;
+    color: #C36033;
+}*/
+/* Menu fonctionnel footer */
+nav#navbar-footer {
+    margin: 20px;
+}
+
+/* Menu fictifs footer */
+
+
+/* Menu RS footer */
