@@ -4,19 +4,22 @@
 
     {% block body %}
     <h1>{{ category.title }} </h1>
-    <p> {{ category.description }}</p>
+    <p class="text-page"> {{ category.description }}</p>
 
     {%for product in products %}
+        <div id="grid-products">
+            <div id="sticker-product">
+                <p class="marque">{{ product.brand }}</p>
+                <p class="designation">{{ product.designation }}</p>
+                <img id="product-little-image" src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
 
-            <p>{{ product.brand }}</p>
-            <p>{{ product.designation }}</p>
-            <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
+                <p class="stock">{{ product.stock }}</p>
+                <p class="prix">{{ product.price }}</p>
 
-            <p>{{ product.price }}</p>
-            <p>{{ product.stock }}</p>
 
-            <a href="{{ path("accueil")}}"> En savoir plus </a>
-            <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
-
+                <a class="BTN-bleu" href="{{ path("accueil")}}"> En savoir plus </a>
+                <a class="BTN-orange" href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
+            </div>
+        </div>
     {% endfor %}
     {% endblock %}

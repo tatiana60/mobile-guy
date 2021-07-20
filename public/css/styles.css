@@ -2,6 +2,7 @@
 
 body {
     background-color:white;
+    margin: 10px 90px;
 }
 .header{
     min-width: min-content;
