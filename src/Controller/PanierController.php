@@ -4,8 +4,11 @@
 namespace App\Controller;
 
 
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PanierController extends AbstractController
@@ -13,16 +16,36 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier", name="panier")
      */
-    public function panier()
+    public function panier(SessionInterface $session, ProductRepository $productRepository)
     {
-        return $this->render('panier.html.twig', []);
+        $panier = $session->get('panier', []);
+
+        $panierDonnes = [];
+
+        foreach ($panier as $id => $quantity){
+            $panierDonnes[]=[
+                    'product' => $productRepository->find($id),
+                    'quantity' => $quantity
+                ];
+        }
+
+        $total = 0;
+
+        foreach ($panierDonnes as $item){
+            $totalItem = $item['product']->getPrice() * $item['quantity'];
+            $total += $totalItem;
+        }
+
+        return $this->render('panier.html.twig', [
+            'items' => $panierDonnes,
+            'total' => $total
+        ]);
     }
 
     /**
      * @Route("/panier/add/{id}", name="add_panier", requirements={"id": "\d+"})
      */
-    public function add($id, Request $request){
-        $session=$request->getSession();
+    public function add($id, SessionInterface $session){
 
         $panier=$session->get('panier', []);
 
@@ -34,7 +57,22 @@ class PanierController extends AbstractController
 
         $session->set('panier', $panier);
 
-        dd($session->get('panier'));
+        return $this->redirectToRoute('panier', [], Response::HTTP_SEE_OTHER);
     }
 
+    /**
+     * @Route("/panier/remove/{id}", name="remove_panier", requirements={"id": "\d+"})
+     */
+    public function remove($id, SessionInterface $session){
+
+        $panier = $session->get('panier', []);
+
+        if(!empty($panier[$id])){
+            unset($panier[$id]);
+        }
+
+        $session->set('panier', $panier);
+
+        return $this->redirectToRoute('panier', [], Response::HTTP_SEE_OTHER);
+    }
 }

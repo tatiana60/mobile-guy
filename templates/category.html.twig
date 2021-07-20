@@ -14,13 +14,13 @@
 
             <p>{{ product.brand }}</p>
             <p>{{ product.designation }}</p>
-            <img src="{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
+            <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
 
             <p>{{ product.price }}</p>
             <p>{{ product.stock }}</p>
 
             <a href="{{ path("accueil")}}"> En savoir plus </a>
-            <a href="{{ path("accueil")}}"> Ajouter au panier </a>
+            <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
 
     {% endfor %}
 </body>
