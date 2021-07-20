@@ -1,5 +1,37 @@
 /* STYLES GÉNÉRAUX */
 
 body {
-    background-color: red;
+    background-color:white;
+}
+.header{
+    min-width: min-content;
+}
+.menu {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    font-family: "Secular One";
+    font-size: 18px;
+}
+.logo-header{
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 0px 20px;
+
+}
+.menu li{
+    list-style-type: none;
+}
+.menu a{
+    display: block;
+    min-width: 75px;
+    margin: 20px 15px;
+    padding: 5px;
+    text-align: center;
+    color:#F14D25;
+    text-decoration: none;
+}
+.menu a:hover{
+    color: #532B2B;
 }
