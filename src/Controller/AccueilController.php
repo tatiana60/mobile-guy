@@ -21,7 +21,7 @@ class AccueilController extends AbstractController
     }
 
     /**
-     * @Route("/accueil", name="accueil")
+     * @Route("/", name="accueil")
      */
     public function index(): Response
     {
