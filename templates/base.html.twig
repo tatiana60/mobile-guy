@@ -8,6 +8,7 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="/css/styles.css">
             <link rel="stylesheet" href="/css/category.css">
+            <link rel="stylesheet" href="/css/panier.css">
             <link rel="stylesheet" href="/css/footer.css">
         {% endblock %}
 
@@ -19,6 +20,7 @@
         {% include "header.html.twig" %}
         {% block body %}
         {% include "category.html.twig" %}
+            {% include "panier.html.twig" %}
         {% endblock %}
         {% include "footer.html.twig" %}
     </body>
