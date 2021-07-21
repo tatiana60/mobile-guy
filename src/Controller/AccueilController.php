@@ -35,6 +35,15 @@ class AccueilController extends AbstractController
     }
 
     /**
+     * @Route("/erreur", name="erreur")
+     */
+    //Page erreur
+    public function erreur():Response
+    {
+        return $this->render('bundles/TwigBundle/Exception/error404.html.twig');
+    }
+
+    /**
      * @Route("/cgv", name="cgv")
      */
     //Page CGV
