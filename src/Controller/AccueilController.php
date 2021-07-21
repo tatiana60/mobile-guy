@@ -37,6 +37,7 @@ class AccueilController extends AbstractController
     /**
      * @Route("/cgv", name="cgv")
      */
+    //Page CGV
     public function conditionsVente():Response
     {
         return $this->render('cgv.html.twig');
