@@ -15,13 +15,14 @@
         </nav>
 
 
-        <div id="second-footer-menu">
-            <h3>Autres</h3>
-            <p id="second-onglet-footer">Conditions Générales de Ventes</p>
-            <p id="second-onglet-footer">Protection des données</p>
-            <p id="second-onglet-footer">Cookies</p>
-            <p id="second-onglet-footer">Mentions Légales</p>
-        </div>
+        <nav id="second-footer-menu" class="navbar-footer">
+            <ul class="menu-footer"></ul>
+                <h3>Autres</h3>
+                <li><a id="onglet-footer" href="{{ path ('cgv') }}">Conditions Générales de Ventes</a></li>
+                <li><a id="onglet-footer" href="{{ path ('protection_donnees') }}">Protection des données</p></li>
+                <li><a id="onglet-footer" href="{{ path('cookies') }}">Cookies</a></li>
+                <li><a id="onglet-footer" href="{{ path ('mentions_legales') }}">Mentions Légales</a></li>
+        </nav>
 
 
         <div id="rs-footer">

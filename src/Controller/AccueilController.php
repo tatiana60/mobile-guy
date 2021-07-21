@@ -33,4 +33,37 @@ class AccueilController extends AbstractController
             'product_list' => $nouveaute,
         ]);
     }
+
+    /**
+     * @Route("/cgv", name="cgv")
+     */
+    //Page CGV
+    public function conditionsVente():Response
+    {
+        return $this->render('cgv.html.twig');
+    }
+
+    /**
+     * @Route("/cookies", name="cookies")
+     */
+    public function cookies():Response
+    {
+        return $this->render('cookies.html.twig');
+    }
+
+    /**
+     * @Route("/mentions-legales", name="mentions_legales")
+     */
+    public function mentions():Response
+    {
+        return $this->render('mentions_legales.html.twig');
+    }
+
+    /**
+     * @Route("/protection-donnees", name="protection_donnees")
+     */
+    public function protection():Response
+    {
+        return $this->render('protection_donnees.html.twig');
+    }
 }
