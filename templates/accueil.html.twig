@@ -4,16 +4,16 @@
 
 {% block body %}
 
-    <div class="slider-pub">
-        <img src="/image/coque-antichoc-pour-iphone-xs.png" id="coque-slider" class="coque-slider">
+    <a href="{{ path("product", {'id':76}) }}"><div class="slider-pub">
+        <img src="/images/coque-antichoc-pour-iphone-xs.png" id="coque-slider" class="coque-slider">
 
         <h1 class="titre-slider">"La coque de choc, garantie contre les chocs !"</h1>
         <p>Déccouvrez la nouvelle coque ResistMAX, <br>solide pour protéger l’iPhone X.</p>
-        <input type="button" id="btn-orange">
-    </div>
+    </div></a>
 
     <div>
         <h1>Nouveautés</h1>
+        {% include 'list_products.html.twig' with {'product': 'i'} %}
     </div>
     <div>
 

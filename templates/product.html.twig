@@ -19,6 +19,6 @@
         <p>{{ product.content }}</p>
 
         {# Affichage des produits suggérés, i prend la valeur du produit de cross_Selling (tableau) #}
-        {% include 'latest_products.html.twig' with {'product': 'i'} %}
+        {% include 'list_products.html.twig' with {'product': 'i'} %}
 
 {% endblock %}

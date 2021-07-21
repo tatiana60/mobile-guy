@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Product;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,7 +32,7 @@ class ProductController extends AbstractController
 
         return $this->render('product.html.twig', [
             'product' => $product,
-            'cross_Selling' => $crossSelling,
+            'product_list' => $crossSelling,
         ]);
     }
 }

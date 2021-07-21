@@ -34,6 +34,16 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findLatest()
+    {
+        $qb = $this->createQueryBuilder('product');
+        $qb
+            ->orderBy('product.id', 'DESC')
+            ->setMaxResults(4);
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
 
     /*
     public function findOneBySomeField($value): ?Product
