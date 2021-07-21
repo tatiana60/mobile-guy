@@ -20,6 +20,7 @@ h1 {
 /* Styles grilles produits */
 div#grid-products {
     display: inline-block;
+    text-align: center;
 }
 #sticker-product{
     background:linear-gradient(180deg, transparent, #0E918CFF);
@@ -57,7 +58,6 @@ p.prix {
 }
 a.BTN-bleu, a.BTN-orange{
     margin-bottom: 10px;
-    margin-left:45px;
     padding: 10px 15px;
     border-radius: 12px;
     color: white;
@@ -73,4 +73,12 @@ a.BTN-bleu {
 }
 a.BTN-orange {
     background-color: #C36033;
+}
+/* Styles Pagination */
+.pagination {
+    font-size: 18px;
+    font-family: 'Secular One';
+    color: #C36033;
+    opacity: 75%;
+    margin: 20px 0px;
 }

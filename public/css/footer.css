@@ -9,6 +9,9 @@ footer {
     min-width: min-content;
     background-color:#C36033;
 }
+#contenu-footer{
+    text-align: center;
+}
 .font-footer{
     margin-left: 40px;
 }
@@ -26,6 +29,7 @@ h3 {
 #navbar-footer, #second-footer-menu, #rs-footer {
     margin: 0px 20px;
     display: inline-table;
+    text-align: left;
 }
 
 /* Menu fonctionnel footer */
@@ -51,13 +55,14 @@ a#onglet-footer {
 /* Menu fictifs footer */
 #second-footer-menu {
     margin: 20px;
+    list-style-type: none;
 }
 p#second-onglet-footer {
     font-family: 'Secular One';
     font-size: 16px;
     color: white;
     opacity: 75%;
-    margin: 3px;
+
 }
 /* Menu RS footer */
 #rs-footer {
