@@ -29,18 +29,24 @@ class CategoryController extends AbstractController
      */
     public function category($slug, ProductRepository $productRepository, Request $request, PaginatorInterface $paginator): Response
     {
-        $donnees = $this->getDoctrine()->getRepository(Product::class)->findBy([],['id' => 'desc']);
+        $category = $this->categoryRepository->findOneBy(['slug'=>$slug]);
+
+        if (null === $category){
+            throw $this->createNotFoundException();
+        }
+
+        $donnees = $this
+            ->getDoctrine()
+            ->getRepository(Product::class)
+            ->findBy(['category'=>$category],['id' => 'desc']);
 
         $products = $paginator->paginate(
             $donnees,
             $request->query->getInt('page', 1),12
         );
 
-        $category = $this->categoryRepository->findOneBy(['slug'=>$slug]);
-
         return $this->render('category.html.twig', [
             'category' => $category,
-            'products'=> $productRepository->findBy(['category'=>$category]),
             'page_products' => $products,
         ]);
     }
