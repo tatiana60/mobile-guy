@@ -1,14 +1,14 @@
 <footer>
 
     <div class="font-footer">
-        <img src="/images/01-logo/color.png" id="logo-footer" class="logo-footer">
+        <img src="/img/01-logo/color.png" id="logo-footer" class="logo-footer">
 
         <nav id="navbar-footer" class="navbar-footer">
             <ul class="menu-footer">
                 <h3>Plan du site</h3>
                 <li><a id="onglet-footer" href="{{ path ('accueil') }}">Accueil</a></li>
-                <li><a id="onglet-footer" href="{{ path ('category', {'id':1}) }}">Smartphones</a></li>
-                <li><a id="onglet-footer" href="{{ path ('category', {'id':2}) }}">Accessoires</a></li>
+                <li><a id="onglet-footer" href="{{ path ('category', {'slug': 'smartphones'}) }}">Smartphones</a></li>
+                <li><a id="onglet-footer" href="{{ path ('category', {'slug': 'accessoires'}) }}">Accessoires</a></li>
                 <li><a id="onglet-footer" href="{{ path ('panier') }}">Panier</a></li>
                 <li><a id="onglet-footer" href="{{ path ('accueil') }}">Compte</a></li>
             </ul>

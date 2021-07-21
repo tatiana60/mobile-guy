@@ -1,10 +1,10 @@
 <header>
         <nav id="navbar" class="navbar">
             <ul class="menu">
-                <a href="{{ path ('accueil') }}"><img src="/images/01-logo/color.png" id="logo-header" class="logo-header"></a>
+                <a href="{{ path ('accueil') }}"><img src="/img/01-logo/color.png" id="logo-header" class="logo-header"></a>
                 <li><a href="{{ path ('accueil') }}">Accueil</a></li>
-                <li><a href="{{ path ('category', {'id':1}) }}">Smartphones</a></li>
-                <li><a href="{{ path ('category', {'id':2}) }}">Accessoires</a></li>
+                <li><a href="{{ path ('category', {'slug': 'smartphones'}) }}">Smartphones</a></li>
+                <li><a href="{{ path ('category', {'slug': 'accessoires'}) }}">Accessoires</a></li>
                 <li><a href="{{ path ('panier') }}">Panier</a></li>
                 <li><a href="{{ path ('accueil') }}">Compte</a></li>
             </ul>
