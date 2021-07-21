@@ -6,7 +6,7 @@
     <h1>{{ category.title }} </h1>
     <p class="text-page"> {{ category.description }}</p>
 
-    {%for product in products %}
+    {%for product in page_products %}
         <div id="grid-products">
             <div id="sticker-product">
                 <p class="marque">{{ product.brand }}</p>
@@ -21,4 +21,5 @@
             </div>
         </div>
     {% endfor %}
+        {{ knp_pagination_render(page_products) }}
     {% endblock %}
