@@ -8,7 +8,7 @@
         <p>{{ i.price }}</p>
         <p>{{ i.stock }}</p>
 
-        <a href="{{ path("product", {'id':i.id}) }}"> En savoir plus </a>
+        <a href="{{ path('product', {'slug':i.slug}) }}"> En savoir plus </a>
         <a href="{{ path('add_panier', {'id':i.id }) }}"> Ajouter au panier </a>
     {% endfor %}
 {% endblock %}

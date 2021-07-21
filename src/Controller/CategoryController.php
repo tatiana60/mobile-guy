@@ -19,14 +19,14 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category-{id}", name="category", requirements={"id": "\d+"})
-     * @param $id
+     * @Route("/{slug}", priority=-1, name="category", requirements={"slug":"[a-z]+"})
+     * @param $slug
      * @param $productRepository
      * @return Response
      */
-    public function category(int $id, ProductRepository $productRepository): Response
+    public function category($slug, ProductRepository $productRepository): Response
     {
-        $category=$this->categoryRepository->find($id);
+        $category = $this->categoryRepository->findOneBy(['slug'=>$slug]);
 
         return $this->render('category.html.twig', [
             'category' => $category,

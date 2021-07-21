@@ -20,15 +20,15 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/product-{id}", name="product")
-     * @param $id
+     * @Route("/produits/{slug}", name="product")
+     * @param $slug
      */
-    public function product(int $id): Response
+    public function product($slug): Response
     {
-        $product=$this->productRepository->find($id);
+        $product=$this->productRepository->findOneBy(['slug'=>$slug]);
 
         //CrossSelling est un tableau des 4 produits avant celui-là
-        $crossSelling = $this->productRepository->findLatestLowerThanId($id);
+        $crossSelling = $this->productRepository->findLatestLowerThanId($product->getId());
 
         return $this->render('product.html.twig', [
             'product' => $product,
