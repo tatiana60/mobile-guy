@@ -1,33 +1,36 @@
 <footer>
+
     <div class="font-footer">
-        <a href="{{ path ('accueil') }}"><img src="/images/01-logo/color.png" id="logo-footer" class="logo-footer"></a>
+        <img src="/images/01-logo/color.png" id="logo-footer" class="logo-footer">
 
         <nav id="navbar-footer" class="navbar-footer">
             <ul class="menu-footer">
                 <h3>Plan du site</h3>
-                <li><a href="{{ path ('accueil') }}">Accueil</a></li>
-                <li><a href="{{ path ('category', {'id':1}) }}">Smartphones</a></li>
-                <li><a href="{{ path ('category', {'id':2}) }}">Accessoires</a></li>
-                <li><a href="{{ path ('panier') }}">Panier</a></li>
-                <li><a href="{{ path ('accueil') }}">Compte</a></li>
+                <li><a id="onglet-footer" href="{{ path ('accueil') }}">Accueil</a></li>
+                <li><a id="onglet-footer" href="{{ path ('category', {'id':1}) }}">Smartphones</a></li>
+                <li><a id="onglet-footer" href="{{ path ('category', {'id':2}) }}">Accessoires</a></li>
+                <li><a id="onglet-footer" href="{{ path ('panier') }}">Panier</a></li>
+                <li><a id="onglet-footer" href="{{ path ('accueil') }}">Compte</a></li>
             </ul>
         </nav>
 
 
-        <div>
+        <div id="second-footer-menu">
             <h3>Autres</h3>
-            <p>Conditions Générales de Ventes</p>
-            <p>Protection des données</p>
-            <p>Cookies</p>
-            <p>Mentions Légales</p>
+            <p id="second-onglet-footer">Conditions Générales de Ventes</p>
+            <p id="second-onglet-footer">Protection des données</p>
+            <p id="second-onglet-footer">Cookies</p>
+            <p id="second-onglet-footer">Mentions Légales</p>
         </div>
 
 
-        <div>
+        <div id="rs-footer">
             <h3>Réseaux Sociaux</h3>
             <img src="/images/02-icons/Twitter%20logo.png" id="icon-twitter">
             <img src="/images/02-icons/Linkedin%20logo.png" id="icon-linkedin">
             <img src="/images/02-icons/Facebook%20logo.png" id="icon-facebook">
+            <h3>Contactez-nous</h3>
+            <p class="contact-footer">En cas de besoins, écrivez-nous à cette adresse : <br> <strong>contact@mobile-guy.com</strong> </p>
         </div>
     </div>
 

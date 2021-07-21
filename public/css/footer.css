@@ -4,25 +4,72 @@
 
 footer {
     padding: 20px;
-    display: flex;
+    display: block;
     justify-content: center;
     min-width: min-content;
+    background-color:#C36033;
 }
 .font-footer{
-    background-color: #C36033;
-    opacity: 70%;
+    margin-left: 40px;
 }
-/*h3 {
+img#logo-footer {
+    width: 192px;
+    height: 62px;
+    display: inline-table;
+}
+h3 {
     font-family: 'Secular One';
     font-size: 18px;
-    color: #C36033;
-}*/
+    color: white;
+    margin-bottom: 5px;
+}
+#navbar-footer, #second-footer-menu, #rs-footer {
+    margin: 0px 20px;
+    display: inline-table;
+}
+
 /* Menu fonctionnel footer */
 nav#navbar-footer {
     margin: 20px;
 }
+ul.menu-footer, a#onglet-footer {
+    font-family: 'Secular One';
+    font-size: 16px;
+    color: white;
+    list-style-type: none;
+    padding-left: 0px;
+}
+a#onglet-footer {
+    text-decoration: none;
+    font-family: 'Secular One';
+    font-size: 16px;
+    opacity: 75%;
+    padding-left: 0px;
+}
+
 
 /* Menu fictifs footer */
-
-
+#second-footer-menu {
+    margin: 20px;
+}
+p#second-onglet-footer {
+    font-family: 'Secular One';
+    font-size: 16px;
+    color: white;
+    opacity: 75%;
+    margin: 3px;
+}
 /* Menu RS footer */
+#rs-footer {
+    margin: 20px;
+}
+img#icon-twitter, img#icon-linkedin ,img#icon-facebook {
+    margin: 0px 10px;
+    width: 25px;
+    height: auto;
+}
+p.contact-footer {
+    font-family: Roboto Light;
+    font-size: 12px;
+    color: white;
+}
