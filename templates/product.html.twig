@@ -10,7 +10,11 @@
         <p>{{ product.description }}</p>
 
         <p>{{ product.price |format_currency('EUR', locale='de')}}</p>
-        <p>{{ product.stock }}</p>
+        {% if product.stock >= 1 %}
+            <p>Disponible</p>
+        {% else %}
+            <p>Indisponible</p>
+        {% endif %}
 
         <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
 

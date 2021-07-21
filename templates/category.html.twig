@@ -14,7 +14,11 @@
                             <p class="designation">{{ product.designation }}</p>
                             <img id="product-little-image" src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
 
-                           <p class="stock">{{ product.stock }}</p>
+                            {% if product.stock >= 1 %}
+                           <p class="stock">Disponible</p>
+                                {% else %}
+                                    <p class="stock">Indisponible</p>
+                            {% endif %}
                 <p class="prix">{{ product.price |format_currency('EUR', locale='de') }}</p>
 
                             <a class="BTN-bleu" href="{{ path('product', {'slug':product.slug}) }}"> En savoir plus </a>
