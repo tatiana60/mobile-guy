@@ -9,7 +9,7 @@
 
         <p>{{ product.description }}</p>
 
-        <p>{{ product.price }}</p>
+        <p>{{ product.price |format_currency('EUR', locale='de')}}</p>
         <p>{{ product.stock }}</p>
 
         <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>

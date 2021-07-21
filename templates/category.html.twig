@@ -14,7 +14,7 @@
                 <img id="product-little-image" src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
 
                 <p class="stock">{{ product.stock }}</p>
-                <p class="prix">{{ product.price }}</p>
+                <p class="prix">{{ product.price |format_currency('EUR', locale='de') }}</p>
 
                 <a class="BTN-bleu" href="{{ path('product', {'slug':product.slug}) }}"> En savoir plus </a>
                 <a class="BTN-orange" href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
