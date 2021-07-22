@@ -15,13 +15,12 @@
 
                         <p class="price-product">{{ product.price |format_currency('EUR', locale='de')}}</p>
                             {% if product.stock >= 1 %}
-                                <p class="disponibilite-product">Disponible</p>
+                                <div id="align-right">
+                                    <a id="BTN-align-right" class="BTN-orange" href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
+                                </div>
                             {% else %}
                                 <p class="disponibilite-product">Indisponible</p>
                             {% endif %}
-                        <div id="align-right">
-                            <a id="BTN-align-right" class="BTN-orange" href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
-                        </div>
                 </div>
 
                 <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
