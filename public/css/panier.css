@@ -2,11 +2,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
 
-thead{
-
+table{
+    table-layout: fixed;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 75px;
 }
+
+thead tr th{
+    width: 180px;
+    font-family: "Secular One", sans-serif;
+    font-size: 18px;
+    color : #4C2529;
+    text-align: left;
+}
+thead th:nth-child(1) {
+    width: 50%;
+}
+thead th:nth-child(2) {
+    width: 15%;
+}
+thead th:nth-child(3) {
+    width: 15%;
+}
+thead th:nth-child(4) {
+    width: 10%;
+}
+thead th:nth-child(5) {
+    width: 10%;
+    text-align: center;
+}
+
 tbody {
-    margin: 50px;
+    font-family: "Roboto Light", sans-serif;
+    margin-top: 25px;
     height: min-content;
-    display: block;
+}
+
+tbody tr{
+    height: 110px;
+    width: auto;
+}
+tbody tr td{
+    vertical-align: middle;
+}
+
+/*Image produit*/
+tbody img{
+    width: 120px;
+    height:auto;
+}
+tbody tr td:nth-child()
+/*Image Poubelle*/
+tbody tr td:last-child img{
+    width: 40px;
+    height:auto;
+}
+tbody tr td:last-child {
+    text-align: center;
+}
+
+
+/*Vider panier*/
+body>a:first-of-type{
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-family: "Secular One", sans-serif;
+    font-size: 16px;
+    color: #4C2529;
+    justify-content: center;
+    display: inline-flex;
+    width: 140px;
+}
+body>a:first-of-type:hover{
+    text-decoration: none;
+}
+
+/*Valider commande*/
+body>a:last-of-type{
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-family: "Secular One", sans-serif;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+    width: 200px;
+    background-color: #117170;
+}
+body>a:last-of-type:hover{
+    background-color: #0a4a49;
+    transition: .2s ease-in-out;
 }
