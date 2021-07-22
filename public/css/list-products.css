@@ -1,0 +1,79 @@
+/* STYLES PAGE CATEGORY */
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+/* Styles grilles produits */
+div#grille-products {
+    display: flex;
+    padding: 0px 40px;
+}
+div#grille-accueil {
+    margin-bottom: 50px;
+}
+#sticker-product{
+    background:linear-gradient(180deg, transparent, #0E918CFF);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px 10px;
+    width: 264px;
+}
+p.marque, p.designation {
+    text-align: left;
+    margin-left: 5px;
+    color: #117170;
+}
+p.marque, p.stock {
+    font-family: "Roboto Light";
+    font-size: 14px;
+}
+p.designation {
+    font-family: "Secular One";
+    font-size: 16px;
+}
+
+img.product-little-image {
+    height: 170px;
+    width: auto;
+}
+/*
+.product-little-image {
+    height: 170px;
+    width: auto;
+}
+*/
+p.stock {
+    text-align: center;
+    color: #4C2529;
+}
+p.prix {
+    font-family: "Secular One";
+    font-size: 22px;
+    color: #4C2529;
+    text-align: center;
+}
+a.BTN-bleu, a.BTN-orange{
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    color: white;
+    font-family: "Secular One";
+    font-size: 16px;
+    text-decoration: none;
+    justify-content: center;
+    display: inline-flex;
+    width: 140px;
+}
+a.BTN-bleu {
+    background-color: #117170;
+}
+a.BTN-orange {
+    background-color: #C36033;
+}
+/* Styles Pagination */
+.pagination {
+    font-size: 18px;
+    font-family: 'Secular One';
+    color: #C36033;
+    opacity: 75%;
+    margin: 20px 0px;
+}

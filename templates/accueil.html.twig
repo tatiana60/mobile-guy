@@ -3,15 +3,17 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <div>
-    <a id="background-slider" href="{{ path('product', {'slug':'coque-antichoc-pour-iphone-xr'}) }}">
-        <img src="/img/Slider-image.png">
-    </a>
+    <div id="contenu-accueil">
+        <a id="background-slider" href="{{ path('product', {'slug':'coque-antichoc-pour-iphone-xr'}) }}">
+            <img src="/img/Slider-image.png">
+        </a>
 
-    <div>
-        <h1>Nouveautés</h1>
-        {% include 'list_products.html.twig' with {'product': 'i'} %}
-    </div>
+        <div>
+            <h1>Nouveautés</h1>
+                <div id="grille-accueil">
+                    {% include 'list_products.html.twig' with {'product': 'i'} %}
+                </div>
+        </div>
         
     </div>
 {% endblock %}

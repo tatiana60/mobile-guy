@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
 
+/* Styles Contenu Accueil */
+#contenu-accueil{
+   text-align: center;
+}
 /* Styles Slider */
 a#background-slider {
    display: block;
-    
 }
-
 /* Styles Nouveautés */
