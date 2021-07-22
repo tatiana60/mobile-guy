@@ -6,7 +6,10 @@
     <h1>Panier</h1>
 
     {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
+        <div style="font-family: 'Secular One';
+    font-size: 24px;
+    color: #117170;
+    text-align: center" class="alert alert-success">
             {{ message }}
         </div>
     {% endfor %}
@@ -60,7 +63,11 @@
         <a href="{{ path('acheter') }}">Valider la commande</a>
 
     {% else %}
-        <p>Panier vide</p>
+        <h2 style="font-family: 'Secular One';
+    font-size: 24px;
+    color: #117170;
+    text-align: center">Panier vide</h2>
+        <a style="margin-left: 10%;" href="{{ path('category', {'slug': 'smartphones'}) }}">Voir nos produits</a>
     {% endif %}
 
 {% endblock %}
