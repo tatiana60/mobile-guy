@@ -15,11 +15,11 @@
         <table>
             <thead>
             <tr>
-                <th>Image</th>
                 <th>Désignation</th>
                 <th>Prix unitaire</th>
                 <th>Quantité</th>
                 <th>Total</th>
+                <th>Supprimer</th>
                 <th></th>
             </tr>
             </thead>
@@ -27,11 +27,11 @@
             <tbody>
             {% for item in items %}
                 <tr>
-                    <td><img src="/images/{{ item.product.image }}" alt="Photo du produit .{{ item.product.designation }}"></td>
-                    <td><a href="{{ path('product', {'slug':item.product.slug}) }}">{{ item.product.designation }}</a></td>
                     <td>
-                        {{ item.product.price |format_currency('EUR', locale='de') }}
+                        <img src="/images/{{ item.product.image }}" alt="Photo du produit .{{ item.product.designation }}">
+                        <a href="{{ path('product', {'slug':item.product.slug}) }}">{{ item.product.designation }}</a>
                     </td>
+                    <td> {{ item.product.price |format_currency('EUR', locale='de') }} </td>
                     <td>
                         <a href="{{ path('remove_panier', {'id':item.product.id}) }}">-</a>
                         {{ item.quantity }}
@@ -39,7 +39,9 @@
                     </td>
                     <td>{{ (item.product.price * item.quantity)|format_currency('EUR', locale='de') }}</td>
                     <td>
-                        <a href="{{ path('delete_panier', {'id':item.product.id }) }}">Supprimer le produit</a>
+                        <a href="{{ path('delete_panier', {'id':item.product.id }) }}">
+                            <img src="/img/02-icons/bin.png"">
+                        </a>
                     </td>
                 </tr>
             {% endfor %}
