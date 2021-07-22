@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Notifier\Notification\Notification;
+use Symfony\Component\Notifier\NotifierInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PanierController extends AbstractController
@@ -72,6 +74,18 @@ class PanierController extends AbstractController
         }
 
         $session->set('panier', $panier);
+
+        return $this->redirectToRoute('panier', [], Response::HTTP_SEE_OTHER);
+    }
+
+    /**
+     * @Route("/panier/acheter", name="acheter")
+     */
+    public function acheter(SessionInterface $session){
+
+        $session->set('panier', []);
+
+        $this->addFlash('success','Merci pour votre achat, votre commande a bien été passée !');
 
         return $this->redirectToRoute('panier', [], Response::HTTP_SEE_OTHER);
     }

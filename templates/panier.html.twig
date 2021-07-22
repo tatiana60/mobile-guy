@@ -4,6 +4,12 @@
 
 {% block body %}
 
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     {% if items | length > 0 %}
         <table>
             <thead>
@@ -20,11 +26,7 @@
             {% for item in items %}
                 <tr>
                     <td><a href="{{ path('product', {'slug':item.product.slug}) }}">{{ item.product.designation }}</a></td>
-                    <td>{% if item.product.stock >= 1 %}
-                            <p>Disponible</p>
-                        {% else %}
-                            <p>Indisponible</p>
-                        {% endif %}</td>
+                    <td>{{ item.quantity }}</td>
                     <td>{{ item.product.price |format_currency('EUR', locale='de') }}</td>
                     <td>{{ (item.product.price * item.quantity)|format_currency('EUR', locale='de') }}</td>
                     <td><a href="{{ path('remove_panier', {'id':item.product.id }) }}">Supprimer</a></td>
@@ -40,6 +42,8 @@
             </tr>
             </tfoot>
         </table>
+
+        <a href="{{ path('acheter') }}">Valider la commande</a>
 
     {% else %}
         <p>Panier vide</p>
