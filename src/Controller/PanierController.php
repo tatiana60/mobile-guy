@@ -47,6 +47,7 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier/add/{id}", name="add_panier", requirements={"id": "\d+"})
      */
+    //Ajoute un produit, augmente quantité
     public function add($id, SessionInterface $session){
 
         $panier=$session->get('panier', []);
@@ -65,7 +66,29 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier/remove/{id}", name="remove_panier", requirements={"id": "\d+"})
      */
-    public function remove($id, SessionInterface $session){
+    //Baisse la quantité ou retire si produit = 1
+    public function remove($id, SessionInterface $session)
+    {
+        $panier = $session->get('panier', []);
+
+        if (!empty($panier[$id])) {
+            if ($panier[$id] > 1) {
+                $panier[$id]--;
+            } else {
+                unset($panier[$id]);
+            }
+        }
+
+        $session->set('panier', $panier);
+
+        return $this->redirectToRoute('panier', [], Response::HTTP_SEE_OTHER);
+    }
+
+    /**
+     * @Route("/panier/delete/{id}", name="delete_panier", requirements={"id": "\d+"})
+     */
+    //Enlève toute la ligne du panier
+    public function delete($id, SessionInterface $session){
 
         $panier = $session->get('panier', []);
 
@@ -93,6 +116,7 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier/vider", name="vider")
      */
+    //Vide le panier
     public function vider(SessionInterface $session){
 
         $session->set('panier', []);
