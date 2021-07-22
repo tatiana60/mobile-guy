@@ -1,0 +1,41 @@
+/* STYLES PAGE CATEGORY */
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+/* Styles Bloc Description */
+div#espace-description-product {
+    text-align: center;
+}
+/* Styles Description Produit */
+div#description-produit {
+    float: left;
+    width: 45%;
+    padding: 0px 0px 0px 60px;
+}
+h2.product-name {
+    font-family: 'Secular One';
+    font-size: 24px;
+    color: #117170;
+    text-align: left;
+}
+p.product-description {
+    font-family: roboto light;
+    font-size: 12px;
+    color: #4C2529;
+    text-align: left;
+}
+p.price-product {
+    font-size: 26px;
+    font-family: 'Secular One';
+    text-align: right;
+    color: #0E918C;
+}
+p.disponibilite-product {
+    text-align: right;
+    font-family: Roboto Light;
+    font-size: 14px;
+    color: #4C2529;
+}
+div#align-right {
+    text-align: right;
+}

@@ -3,23 +3,30 @@
 {% block title %}{{ product.designation }}{% endblock %}
 
     {% block body %}
+        <div id="contenu-body">
+                <h1>{{ product.brand }}</h1>
 
-        <h1>{{ product.brand }}</h1>
-        <h2>{{ product.designation }} - {{ product.specification }}</h2>
+            <div id="espace-description-product">
+                <div id="description-produit">
+                    <h2 class="product-name">{{ product.designation }} - {{ product.specification }}</h2>
 
-        <p>{{ product.description }}</p>
+                    <p class="product-description">{{ product.description }}</p>
+                    <p class="product-description">{{ product.content }}</p>
 
-        <p>{{ product.price |format_currency('EUR', locale='de')}}</p>
-        {% if product.stock >= 1 %}
-            <p>Disponible</p>
-            <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
-        {% else %}
-            <p>Indisponible</p>
-        {% endif %}
+                        <p class="price-product">{{ product.price |format_currency('EUR', locale='de')}}</p>
+                            {% if product.stock >= 1 %}
+                                <p class="disponibilite-product">Disponible</p>
+                            {% else %}
+                                <p class="disponibilite-product">Indisponible</p>
+                            {% endif %}
+                        <div id="align-right">
+                            <a id="BTN-align-right" class="BTN-orange" href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
+                        </div>
+                </div>
 
-        <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
-
-        <p>{{ product.content }}</p>
+                <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
+            </div>
+        </div>
 
         {# Affichage des produits suggérés, i prend la valeur du produit de cross_Selling (tableau) #}
         {% include 'list_products.html.twig' with {'product': 'i'} %}
