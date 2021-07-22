@@ -47,7 +47,7 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier/add/{id}", name="add_panier", requirements={"id": "\d+"})
      */
-    //Ajoute un produit
+    //Ajoute un produit, augmente quantité
     public function add($id, SessionInterface $session){
 
         $panier=$session->get('panier', []);
