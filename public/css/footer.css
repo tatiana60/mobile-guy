@@ -21,7 +21,7 @@ img#logo-footer {
     display: inline-table;
 }
 h3 {
-    font-family: 'Secular One';
+    font-family: 'Secular One', sans-serif;
     font-size: 18px;
     color: white;
     margin-bottom: 5px;
@@ -37,7 +37,7 @@ nav#navbar-footer {
     margin: 20px;
 }
 ul.menu-footer, a#onglet-footer {
-    font-family: 'Secular One';
+    font-family: 'Secular One', sans-serif;
     font-size: 16px;
     color: white;
     list-style-type: none;
@@ -45,7 +45,7 @@ ul.menu-footer, a#onglet-footer {
 }
 a#onglet-footer {
     text-decoration: none;
-    font-family: 'Secular One';
+    font-family: 'Secular One', sans-serif;
     font-size: 16px;
     opacity: 75%;
     padding-left: 0px;
@@ -58,11 +58,13 @@ a#onglet-footer {
     list-style-type: none;
 }
 p#second-onglet-footer {
-    font-family: 'Secular One';
+    font-family: 'Secular One', sans-serif;
     font-size: 16px;
     color: white;
     opacity: 75%;
-
+}
+a#onglet-footer:hover{
+    opacity: 100%;
 }
 /* Menu RS footer */
 #rs-footer {
@@ -74,7 +76,7 @@ img#icon-twitter, img#icon-linkedin ,img#icon-facebook {
     height: auto;
 }
 p.contact-footer {
-    font-family: Roboto Light;
+    font-family: 'Roboto Light', sans-serif;
     font-size: 12px;
     color: white;
 }
