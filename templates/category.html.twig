@@ -14,15 +14,15 @@
                             <p class="designation">{{ product.designation }}</p>
                             <img id="product-little-image" src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
 
+                            <p class="prix">{{ product.price |format_currency('EUR', locale='de') }}</p>
+
                             {% if product.stock >= 1 %}
-                           <p class="stock">Disponible</p>
+                                <a class="BTN-orange" href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
                                 {% else %}
                                     <p class="stock">Indisponible</p>
                             {% endif %}
-                <p class="prix">{{ product.price |format_currency('EUR', locale='de') }}</p>
 
                             <a class="BTN-bleu" href="{{ path('product', {'slug':product.slug}) }}"> En savoir plus </a>
-                            <a class="BTN-orange" href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
                         </div>
                     </div>
 

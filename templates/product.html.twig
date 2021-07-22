@@ -12,11 +12,10 @@
         <p>{{ product.price |format_currency('EUR', locale='de')}}</p>
         {% if product.stock >= 1 %}
             <p>Disponible</p>
+            <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
         {% else %}
             <p>Indisponible</p>
         {% endif %}
-
-        <a href="{{ path('add_panier', {'id':product.id }) }}"> Ajouter au panier </a>
 
         <img src="/images/{{ product.image }}" alt="Photo du produit .{{ product.designation }}">
 
