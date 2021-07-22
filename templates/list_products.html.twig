@@ -5,14 +5,15 @@
         <p>{{ i.designation }}</p>
         <img src="/images/{{ i.image }}" alt="Photo du produit .{{ i.designation }}">
 
-        <p>{{ i.price |format_currency('EUR', locale='de') }}</p>
+        <p class="stock">{{ i.price |format_currency('EUR', locale='de') }}</p>
         {% if i.stock >= 1 %}
             <p>Disponible</p>
         {% else %}
             <p>Indisponible</p>
         {% endif %}
+        <p class="prix">{{ i.price }}</p>
 
-        <a href="{{ path('product', {'slug':i.slug}) }}"> En savoir plus </a>
-        <a href="{{ path('add_panier', {'id':i.id }) }}"> Ajouter au panier </a>
+        <a class="BTN-bleu" href="{{ path('product', {'slug':i.slug}) }}"> En savoir plus </a>
+        <a class="BTN-orange" href="{{ path('add_panier', {'id':i.id }) }}"> Ajouter au panier </a>
     {% endfor %}
 {% endblock %}
