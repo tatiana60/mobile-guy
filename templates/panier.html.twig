@@ -49,12 +49,14 @@
                 </tr>
             {% endfor %}
             </tbody>
+
             <tfoot>
             <tr>
+                <td></td>
+                <td></td>
                 <td>Total :</td>
-                <td></td>
-                <td></td>
                 <td>{{ total |format_currency('EUR', locale='de')}}</td>
+                <td></td>
             </tr>
             </tfoot>
         </table>

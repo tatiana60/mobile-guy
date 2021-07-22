@@ -7,6 +7,7 @@ table{
     width: 100%;
     margin-top: 50px;
     margin-left: 75px;
+    margin-bottom: 50px;
 }
 
 thead tr th{
@@ -21,12 +22,15 @@ thead th:nth-child(1) {
 }
 thead th:nth-child(2) {
     width: 15%;
+    text-align: center;
 }
 thead th:nth-child(3) {
     width: 15%;
+    text-align: center;
 }
 thead th:nth-child(4) {
     width: 10%;
+    text-align: center;
 }
 thead th:nth-child(5) {
     width: 10%;
@@ -35,37 +39,66 @@ thead th:nth-child(5) {
 
 tbody {
     font-family: "Roboto Light", sans-serif;
-    margin-top: 25px;
     height: min-content;
 }
 
 tbody tr{
-    height: 110px;
+    height: 130px;
     width: auto;
 }
 tbody tr td{
-    vertical-align: middle;
+    text-align: center;
 }
+
+/*Désignation*/
+tbody tr td:first-child{
+    text-align: left;
+}
+tbody tr td:first-child a{
+    text-decoration: none;
+    color: black;
+}
+tbody tr td:first-child a:hover{
+    text-decoration: underline;
+}
+
 
 /*Image produit*/
 tbody img{
+    vertical-align: middle;
     width: 120px;
     height:auto;
 }
-tbody tr td:nth-child()
-/*Image Poubelle*/
+
+/*Quantité*/
+tbody tr td:nth-child(3) a{
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    font-family: "Secular One", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #117170;
+}
+/*Suppression*/
 tbody tr td:last-child img{
     width: 40px;
     height:auto;
 }
-tbody tr td:last-child {
-    text-align: center;
+
+/*Total*/
+tfoot td{
+    border-top: 2px solid #0E918C;
+    padding-top: 20px;
+    font-family: "Secular One", sans-serif;
+    font-size: 22px;
+    color: #4C2529;
 }
 
 
 /*Vider panier*/
 body>a:first-of-type{
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     padding: 10px 15px;
     border-radius: 12px;
     font-family: "Secular One", sans-serif;
@@ -74,6 +107,7 @@ body>a:first-of-type{
     justify-content: center;
     display: inline-flex;
     width: 140px;
+
 }
 body>a:first-of-type:hover{
     text-decoration: none;
@@ -81,7 +115,7 @@ body>a:first-of-type:hover{
 
 /*Valider commande*/
 body>a:last-of-type{
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     padding: 10px 15px;
     border-radius: 12px;
     font-family: "Secular One", sans-serif;
