@@ -15,6 +15,7 @@
         <table>
             <thead>
             <tr>
+                <th>Image</th>
                 <th>Désignation</th>
                 <th>Prix unitaire</th>
                 <th>Quantité</th>
@@ -26,6 +27,7 @@
             <tbody>
             {% for item in items %}
                 <tr>
+                    <td><img src="/images/{{ item.product.image }}" alt="Photo du produit .{{ item.product.designation }}"></td>
                     <td><a href="{{ path('product', {'slug':item.product.slug}) }}">{{ item.product.designation }}</a></td>
                     <td>
                         {{ item.product.price |format_currency('EUR', locale='de') }}
@@ -37,7 +39,7 @@
                     </td>
                     <td>{{ (item.product.price * item.quantity)|format_currency('EUR', locale='de') }}</td>
                     <td>
-                        <a href="{{ path('delete_panier', {'id':item.product.id }) }}">Supprimer</a>
+                        <a href="{{ path('delete_panier', {'id':item.product.id }) }}">Supprimer le produit</a>
                     </td>
                 </tr>
             {% endfor %}
