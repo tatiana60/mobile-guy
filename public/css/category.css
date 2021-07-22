@@ -6,12 +6,12 @@
 h1 {
     color: #C36033;
     text-align: center;
-    font-family: "Secular One";
+    font-family: "Secular One", sans-serif;
     font-size: 32px;
 }
 .text-page {
     color: #C36033;
-    font-family: "Roboto Light";
+    font-family: "Roboto Light", sans-serif;
     font-size: 16px;
     text-align: center;
     margin-bottom: 40px;
@@ -35,11 +35,11 @@ p.marque, p.designation {
     color: #117170;
 }
 p.marque, p.stock {
-    font-family: "Roboto Light";
+    font-family: "Roboto Light", sans-serif;
     font-size: 14px;
 }
 p.designation {
-    font-family: "Secular One";
+    font-family: "Secular One", sans-serif;
     font-size: 16px;
 }
 img#product-little-image {
@@ -51,7 +51,7 @@ p.stock {
     color: #4C2529;
 }
 p.prix {
-    font-family: "Secular One";
+    font-family: "Secular One", sans-serif;
     font-size: 22px;
     color: #4C2529;
     text-align: center;
@@ -61,7 +61,7 @@ a.BTN-bleu, a.BTN-orange{
     padding: 10px 15px;
     border-radius: 12px;
     color: white;
-    font-family: "Secular One";
+    font-family: "Secular One", sans-serif;
     font-size: 16px;
     text-decoration: none;
     justify-content: center;
@@ -71,13 +71,21 @@ a.BTN-bleu, a.BTN-orange{
 a.BTN-bleu {
     background-color: #117170;
 }
+a.BTN-bleu:hover{
+    background-color: #0a4a49;
+    transition: .2s ease-in-out;
+}
 a.BTN-orange {
     background-color: #C36033;
+}
+a.BTN-orange:hover{
+    background-color: #a34d26;
+    transition: .2s ease-in-out;
 }
 /* Styles Pagination */
 .pagination {
     font-size: 18px;
-    font-family: 'Secular One';
+    font-family: 'Secular One', sans-serif;
     color: #C36033;
     opacity: 75%;
     margin: 20px 0px;
