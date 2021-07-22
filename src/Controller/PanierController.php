@@ -89,4 +89,16 @@ class PanierController extends AbstractController
 
         return $this->redirectToRoute('panier', [], Response::HTTP_SEE_OTHER);
     }
+
+    /**
+     * @Route("/panier/vider", name="vider")
+     */
+    public function vider(SessionInterface $session){
+
+        $session->set('panier', []);
+
+        $this->addFlash('success','Votre panier a été vidé !');
+
+        return $this->redirectToRoute('panier', [], Response::HTTP_SEE_OTHER);
+    }
 }
